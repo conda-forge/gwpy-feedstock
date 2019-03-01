@@ -14,30 +14,33 @@ build:
 
 requirements:
   host:
-    - python
     - pip
+    - python
+    - setuptools
   run:
-    - python >=2.7
-    - six >=1.5
-    - python-dateutil
-    - enum34  # [py2k]
-    - numpy >=1.7.1
-    - scipy >=0.12.1
-    - matplotlib >=1.2.0
     - astropy >=1.1.1
+    - dqsegdb2
+    - enum34  # [py2k]
+    - gwdatafind
+    - gwosc >=0.4.0
     - h5py >=1.3
     - ligo-segments >=1.0.0
-    - tqdm >=4.10.0
     - ligotimegps >=1.2.1
-    - gwosc >=0.3.1
+    - matplotlib >=1.2.0
+    - numpy >=1.7.1
+    - python >=2.7
+    - python-dateutil
+    - scipy >=0.12.1
+    - six >=1.5
+    - tqdm >=4.10.0
 
 test:
   requires:
-    - pytest >=3.3.0
-    - freezegun >=0.2.3
-    - sqlparse >=0.2.0
     - beautifulsoup4
+    - freezegun >=0.2.3
     - mock  # [py2k]
+    - pytest >=3.3.0
+    - sqlparse >=0.2.0
   imports:
     - gwpy
     - gwpy.astro
