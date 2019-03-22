@@ -1,4 +1,4 @@
-{% set version = "0.14.1" %}
+{% set version = "0.14.2" %}
 
 package:
   name: gwpy
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/g/gwpy/gwpy-{{ version }}.tar.gz
-  sha256: 9648ceed2feb92b7266367552e6185214ffbc6c8bf1aac8013e03f129d497609
+  sha256: 45c4f124cc43d8284520b73f3c35ca571221a00fe3953dd34714d0b859ffd820
 
 build:
   number: 0
