@@ -8,6 +8,9 @@ package:
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
   sha256: f04918d4408dbb06401a9c4829ada8d1073e662be1d49f7d482cabab743c628d
+  patches:
+    # patch mismatched exception type in tests
+    - h5py-test-error.patch
 
 build:
   number: 0
