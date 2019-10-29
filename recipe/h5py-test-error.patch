@@ -1,0 +1,13 @@
+diff --git a/gwpy/timeseries/tests/test_timeseries.py b/gwpy/timeseries/tests/test_timeseries.py
+index 05834dc7..a4ad31eb 100644
+--- a/gwpy/timeseries/tests/test_timeseries.py
++++ b/gwpy/timeseries/tests/test_timeseries.py
+@@ -330,7 +330,7 @@ class TestTimeSeries(_TestTimeSeriesBase):
+             # check that we can't then write the same data again
+             with pytest.raises(IOError):
+                 array.write(tmp)
+-            with pytest.raises((RuntimeError, OSError)):
++            with pytest.raises((RuntimeError, OSError, IOError)):
+                 array.write(tmp, append=True)
+
+             # check reading with start/end works
