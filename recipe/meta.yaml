@@ -30,7 +30,7 @@ requirements:
     - matplotlib >=1.2.0
     - numpy >=1.7.1
     - pathlib  # [py<34]
-    - python >=2.7
+    - python
     - python-dateutil
     - scipy >=0.12.1
     - six >=1.5
