@@ -1,5 +1,5 @@
 {% set name = "gwpy" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,14 +7,13 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: f04918d4408dbb06401a9c4829ada8d1073e662be1d49f7d482cabab743c628d
-  patches:
-    # patch mismatched exception type in tests
-    - h5py-test-error.patch
+  sha256: b8c59a01fc45c005e9b1b544b702502f72bc85a94875373937b05efc8c395409
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: "{{ PYTHON }} -m pip install . -vv"
+  entry_points:
+    - gwpy-plot = gwpy.cli.gwpy_plot:main
 
 requirements:
   host:
@@ -33,7 +32,7 @@ requirements:
     - matplotlib >=1.2.0
     - numpy >=1.7.1
     - pathlib  # [py<34]
-    - python >=2.7
+    - python
     - python-dateutil
     - scipy >=0.12.1
     - six >=1.5
