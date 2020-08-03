@@ -1,17 +1,17 @@
 {% set name = "gwpy" %}
-{% set version = "1.0.1" %}
+{% set version = "2.0.0" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: b8c59a01fc45c005e9b1b544b702502f72bc85a94875373937b05efc8c395409
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: c84df0ade9a6c14457c40c28394f17a16d1cdc56c08c2c7dec58763813d8e57b
 
 build:
-  number: 1
-  script: "{{ PYTHON }} -m pip install . -vv"
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - gwpy-plot = gwpy.cli.gwpy_plot:main
 
@@ -68,11 +68,11 @@ test:
     - gwpy-plot --help
 
 about:
-  home: "https://gwpy.github.io"
-  license: "GPL-3.0-or-later"
-  license_family: "GPL"
-  license_file: "LICENSE"
-  summary: "A python package for gravitational-wave astrophysics"
+  home: https://gwpy.github.io
+  license: GPL-3.0-or-later
+  license_family: GPL
+  license_file: LICENSE
+  summary: A python package for gravitational-wave astrophysics
   description: |
     GWpy is a collaboration-driven Python package providing tools for
     studying data from ground-based gravitational-wave detectors.
