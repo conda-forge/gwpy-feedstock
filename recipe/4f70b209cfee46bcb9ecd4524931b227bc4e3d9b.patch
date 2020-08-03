@@ -1,0 +1,23 @@
+From 4f70b209cfee46bcb9ecd4524931b227bc4e3d9b Mon Sep 17 00:00:00 2001
+From: Duncan Macleod <duncan.macleod@ligo.org>
+Date: Tue, 28 Jul 2020 16:18:46 +0100
+Subject: [PATCH] gwpy.table: update GWOSC event name in test
+
+the events were renamed upstream by GWOSC
+---
+ gwpy/table/tests/test_table.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/gwpy/table/tests/test_table.py b/gwpy/table/tests/test_table.py
+index 615d9b706..9892e21f9 100644
+--- a/gwpy/table/tests/test_table.py
++++ b/gwpy/table/tests/test_table.py
+@@ -764,7 +764,7 @@ def test_fetch_open_data_kwargs(self):
+         except (URLError, SSLError) as exc:  # pragma: no-cover
+             pytest.skip(str(exc))
+         assert len(table) == 1
+-        assert table[0]["name"] == "GW170817_R1"
++        assert table[0]["name"] == "GW170817-v3"
+         assert set(table.colnames) == {
+             "name",
+             "mass_1_source",
