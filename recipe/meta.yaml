@@ -1,5 +1,5 @@
 {% set name = "gwpy" %}
-{% set version = "2.0.0" %}
+{% set version = "2.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c84df0ade9a6c14457c40c28394f17a16d1cdc56c08c2c7dec58763813d8e57b
-  patches:
-    # fix name of event in GWOSC test
-    - 4f70b209cfee46bcb9ecd4524931b227bc4e3d9b.patch
+  sha256: 3f40c36218c9766b6ad96d8831f8e019344995ef92793445a476fdd9ff26bb6c
 
 build:
   noarch: python
@@ -32,7 +29,7 @@ requirements:
     - h5py >=1.3
     - ligo-segments >=1.0.0
     - ligotimegps >=1.2.1
-    - matplotlib-base >=3.1.0,<3.3.0a0
+    - matplotlib-base >=3.1.0
     - numpy >=1.12.0
     - python
     - python-dateutil
