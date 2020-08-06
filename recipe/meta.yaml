@@ -8,9 +8,6 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 3f40c36218c9766b6ad96d8831f8e019344995ef92793445a476fdd9ff26bb6c
-  patches:
-    # fix name of event in GWOSC test
-    - 4f70b209cfee46bcb9ecd4524931b227bc4e3d9b.patch
 
 build:
   noarch: python
