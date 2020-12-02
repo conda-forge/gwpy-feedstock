@@ -1,5 +1,5 @@
 {% set name = "gwpy" %}
-{% set version = "2.0.1" %}
+{% set version = "2.0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3f40c36218c9766b6ad96d8831f8e019344995ef92793445a476fdd9ff26bb6c
+  sha256: 263f5c8e53625618d1fdfb7715c51b50844d03a585c2c4155c10bbb0825ff03f
 
 build:
   noarch: python
@@ -19,7 +19,7 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python >=3.6
     - setuptools >=20.2.2
   run:
     - astropy >=3.0.0
@@ -31,7 +31,7 @@ requirements:
     - ligotimegps >=1.2.1
     - matplotlib-base >=3.1.0
     - numpy >=1.12.0
-    - python
+    - python >=3.6
     - python-dateutil
     - scipy >=1.2.0
     - tqdm >=4.10.0
@@ -40,6 +40,7 @@ test:
   requires:
     - beautifulsoup4
     - freezegun >=0.2.3
+    - pip
     - pytest >=3.3.0
   imports:
     - gwpy
@@ -62,6 +63,7 @@ test:
     - python -m pytest --pyargs gwpy
     - python -m gwpy.time --help
     - gwpy-plot --help
+    - pip check
 
 about:
   home: https://gwpy.github.io
