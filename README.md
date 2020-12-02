@@ -5,9 +5,13 @@ Home: https://gwpy.github.io
 
 Package license: GPL-3.0-or-later
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/gwpy-feedstock/blob/master/LICENSE.txt)
 
 Summary: A python package for gravitational-wave astrophysics
+
+Development: https://github.com/gwpy/gwpy/
+
+Documentation: https://gwpy.github.io/docs/stable/
 
 GWpy is a collaboration-driven Python package providing tools for
 studying data from ground-based gravitational-wave detectors.
