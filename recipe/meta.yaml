@@ -1,5 +1,5 @@
 {% set name = "gwpy" %}
-{% set version = "2.0.2" %}
+{% set version = "2.0.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 263f5c8e53625618d1fdfb7715c51b50844d03a585c2c4155c10bbb0825ff03f
+  sha256: f2fef54f5489d484323bad5695699e865dae7d770498d90e1220938b6e831aba
 
 build:
   noarch: python
@@ -20,17 +20,17 @@ requirements:
   host:
     - pip
     - python >=3.6
-    - setuptools >=20.2.2
+    - setuptools >=38.2.5
   run:
     - astropy >=3.0.0
     - dqsegdb2
     - gwdatafind
     - gwosc >=0.5.3
-    - h5py >=1.3
+    - h5py >=2.7.0
     - ligo-segments >=1.0.0
     - ligotimegps >=1.2.1
-    - matplotlib-base >=3.1.0
-    - numpy >=1.12.0
+    - matplotlib-base >=3.3.0
+    - numpy >=1.15.0
     - python >=3.6
     - python-dateutil
     - scipy >=1.2.0
@@ -39,35 +39,18 @@ requirements:
 test:
   requires:
     - beautifulsoup4
-    - freezegun >=0.2.3
+    - freezegun >=0.3.12
     - pip
-    - pytest >=3.3.0
-  imports:
-    - gwpy
-    - gwpy.astro
-    - gwpy.cli
-    - gwpy.detector
-    - gwpy.frequencyseries
-    - gwpy.io
-    - gwpy.plot
-    - gwpy.segments
-    - gwpy.signal
-    - gwpy.spectrogram
-    - gwpy.table
-    - gwpy.testing
-    - gwpy.time
-    - gwpy.timeseries
-    - gwpy.types
-    - gwpy.utils
+    - pytest >=3.6.3
   commands:
+    - python -m pip check
     - python -m pytest --pyargs gwpy
     - python -m gwpy.time --help
     - gwpy-plot --help
-    - pip check
 
 about:
   home: https://gwpy.github.io
-  dev_url: https://github.com/gwpy/gwpy/
+  dev_url: https://github.com/gwpy/gwpy.git
   doc_url: https://gwpy.github.io/docs/stable/
   license: GPL-3.0-or-later
   license_family: GPL
