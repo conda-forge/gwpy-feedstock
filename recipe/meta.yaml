@@ -1,5 +1,5 @@
 {% set name = "gwpy" %}
-{% set version = "2.1.0" %}
+{% set version = "2.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7736f6a3865507362f6b992b21b0475cd11aa9bb2a6c7faad612ffbd723615af
+  sha256: b08f290a5a43d00cc62c2e234e6e27de1e1b76b82e419ae0b9acc7dd2b0624af
 
 build:
   noarch: python
@@ -49,15 +49,18 @@ test:
     - python-ligo-lw
     - uproot
   commands:
+    # check requirements
     - python -m pip check
+    # run test suite
     - python -m pytest --pyargs gwpy
+    # check command-line interfaces
     - python -m gwpy.time --help
     - gwpy-plot --help
 
 about:
   home: https://gwpy.github.io
   dev_url: https://github.com/gwpy/gwpy.git
-  doc_url: https://gwpy.github.io/docs/stable/
+  doc_url: https://gwpy.github.io/docs/{{ version }}/
   license: GPL-3.0-or-later
   license_family: GPL
   license_file: LICENSE
