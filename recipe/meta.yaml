@@ -46,7 +46,6 @@ test:
     - python-framel
     - python-lal
     - python-ldas-tools-framecpp
-    - python-ligo-lw
     - uproot
   commands:
     # check requirements
