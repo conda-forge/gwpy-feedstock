@@ -19,20 +19,20 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.7
     - setuptools >=38.2.5
     - setuptools-scm
   run:
-    - astropy >=3.0.0
+    - astropy >=4.0
     - dqsegdb2
-    - gwdatafind
+    - gwdatafind >=1.1.0
     - gwosc >=0.5.3
-    - h5py >=2.7.0
+    - h5py >=2.8.0
     - ligo-segments >=1.0.0
     - ligotimegps >=1.2.1
     - matplotlib-base >=3.3.0
-    - numpy >=1.15.0
-    - python >=3.6
+    - numpy >=1.16
+    - python >=3.7
     - python-dateutil
     - scipy >=1.2.0
     - tqdm >=4.10.0
