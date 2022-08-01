@@ -51,7 +51,7 @@ test:
     # check requirements
     - python -m pip check
     # run test suite
-    - python -m pytest --pyargs gwpy
+    - python -m pytest -ra --pyargs gwpy
     # check command-line interfaces
     - python -m gwpy.time --help
     - gwpy-plot --help
