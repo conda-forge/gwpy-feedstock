@@ -1,5 +1,5 @@
 {% set name = "gwpy" %}
-{% set version = "2.1.5" %}
+{% set version = "3.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 687015973b84c0d628fa7b245ff8f6a2a7a6008aee6860f17167c87ee8394521
+  sha256: a05dd06e79b132162f65c8586c08e0aaa633b62f1b8a09c39c95df93a7b1fc02
 
 build:
   noarch: python
@@ -23,7 +23,7 @@ requirements:
     - setuptools >=38.2.5
     - setuptools-scm
   run:
-    - astropy >=4.0
+    - astropy >=4.3.0
     - dqsegdb2
     - gwdatafind >=1.1.0
     - gwosc >=0.5.3
@@ -31,7 +31,7 @@ requirements:
     - ligo-segments >=1.0.0
     - ligotimegps >=1.2.1
     - matplotlib-base >=3.3.0
-    - numpy >=1.16
+    - numpy >=1.17
     - python >=3.7
     - python-dateutil
     - scipy >=1.2.0
@@ -49,7 +49,8 @@ test:
     - uproot
   commands:
     # check requirements
-    - python -m pip check
+    - python -m pip check gwpy
+    - python -m pip show gwpy
     # run test suite
     - python -m pytest -ra --pyargs gwpy
     # check command-line interfaces
