@@ -42,10 +42,11 @@ test:
     - pip
     # for the tests to run:
     - pytest >=3.9.1
+    - pytest-freezegun
     - pytest-requires
     # extras to enable more tests:
     - beautifulsoup4
-    - freezegun >=0.3.12
+    - maya
     - python-framel
     - python-lal
     - python-lalframe
