@@ -1,5 +1,5 @@
 {% set name = "gwpy" %}
-{% set version = "3.0.2" %}
+{% set version = "3.0.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 1131bd97fd9ef473bc8c9fffb82907ef186574430779bb6f2970fd5d5fa5f234
+  sha256: 891f8fce56d72387ebf23ff2548ccee3b0ac150ced14b759820d94b593db002e
 
 build:
   noarch: python
@@ -42,10 +42,11 @@ test:
     - pip
     # for the tests to run:
     - pytest >=3.9.1
+    - pytest-freezegun
     - pytest-requires
     # extras to enable more tests:
     - beautifulsoup4
-    - freezegun >=0.3.12
+    - maya
     - python-framel
     - python-lal
     - python-lalframe
