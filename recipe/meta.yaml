@@ -1,5 +1,5 @@
 {% set name = "gwpy" %}
-{% set version = "3.0.6" %}
+{% set version = "3.0.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4e96695218b5e6dee6d34ede8daf5cb1a4e0535df86ab59b9af19847157f4571
+  sha256: 48af46b9ed1d8b404c93d0d83df96467cf447e54cc327ee666e57c27dfbb8e47
 
 build:
   noarch: python
