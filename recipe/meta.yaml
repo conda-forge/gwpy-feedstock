@@ -48,8 +48,9 @@ test:
     - pytest-requires
     # extras to enable more tests:
     - beautifulsoup4
+    - inspiral-range
     - maya
-    - python-framel
+    - python-framel >=8.40.1
     - python-lal
     - python-lalframe
     - python-ldas-tools-framecpp
