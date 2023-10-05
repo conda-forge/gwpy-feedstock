@@ -1,5 +1,5 @@
 {% set name = "gwpy" %}
-{% set version = "3.0.5" %}
+{% set version = "3.0.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: bf54cbc9f53f1868ed14af456967f2a18604caf71067de00e4df6aa4caa90be5
+  sha256: 4e96695218b5e6dee6d34ede8daf5cb1a4e0535df86ab59b9af19847157f4571
 
 build:
   noarch: python
@@ -19,22 +19,24 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.7
-    - setuptools >=38.2.5
-    - setuptools-scm
+    - python >=3.8
+    - setuptools >=61
+    - setuptools-scm >=3.4.3
+    - wheel
   run:
     - astropy >=4.3.0
     - dqsegdb2
     - gwdatafind >=1.1.0
     - gwosc >=0.5.3
-    - h5py >=2.8.0
+    - h5py >=3.0.0
     - ligo-segments >=1.0.0
     - ligotimegps >=1.2.1
     - matplotlib-base >=3.3.0
-    - numpy >=1.17
-    - python >=3.7
+    - numpy >=1.19
+    - python >=3.8
     - python-dateutil
-    - scipy >=1.2.0
+    - requests
+    - scipy >=1.5.0
     - tqdm >=4.10.0
 
 test:
