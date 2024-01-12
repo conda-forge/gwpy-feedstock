@@ -11,7 +11,7 @@ Summary: A python package for gravitational-wave astrophysics
 
 Development: https://github.com/gwpy/gwpy.git
 
-Documentation: https://gwpy.github.io/docs/3.0.7/
+Documentation: https://gwpy.github.io/docs/3.0.8/
 
 GWpy is a collaboration-driven Python package providing tools for
 studying data from ground-based gravitational-wave detectors.
@@ -108,7 +108,7 @@ available continuous integration services. Thanks to the awesome service provide
 [CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
 [Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
 it is possible to build and upload installable packages to the
-[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance

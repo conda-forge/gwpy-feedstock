@@ -1,5 +1,5 @@
 {% set name = "gwpy" %}
-{% set version = "3.0.7" %}
+{% set version = "3.0.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 48af46b9ed1d8b404c93d0d83df96467cf447e54cc327ee666e57c27dfbb8e47
+  sha256: 3566f7bb7dc193a02deb252afccd776761016984a92c41154acc92bc9e9af173
 
 build:
   noarch: python
@@ -25,6 +25,7 @@ requirements:
     - wheel
   run:
     - astropy >=4.3.0
+    - dateparser >=1.1.4
     - dqsegdb2
     - gwdatafind >=1.1.0
     - gwosc >=0.5.3
@@ -44,21 +45,21 @@ test:
     - pip
     # for the tests to run:
     - pytest >=3.9.1
-    - pytest-freezegun
+    - pytest-freezer
     - pytest-requires
+    - requests-mock
     # extras to enable more tests:
     - beautifulsoup4
-    - inspiral-range
-    - maya
+    - inspiral-range >=0.5.0
     - python-framel >=8.40.1
     - python-lal
     - python-lalframe
     - python-ldas-tools-framecpp
     - python-ligo-lw >=1.7.0
-    - uproot
+    - uproot >=4.1.5
   commands:
     # check requirements
-    - python -m pip check gwpy
+    - python -m pip check
     - python -m pip show gwpy
     # run test suite
     - python -m pytest -ra --pyargs gwpy
