@@ -24,7 +24,7 @@ requirements:
     - setuptools-scm >=3.4.3
     - wheel
   run:
-    - astropy >=4.3.0
+    - astropy-base >=4.3.0
     - dateparser >=1.1.4
     - dqsegdb2
     - gwdatafind >=1.1.0
