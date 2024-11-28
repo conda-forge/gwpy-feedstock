@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - gwpy-plot = gwpy.cli.gwpy_plot:main
@@ -24,7 +24,7 @@ requirements:
     - setuptools-scm >=3.4.3
     - wheel
   run:
-    - astropy >=4.3.0
+    - astropy-base >=4.3.0
     - dateparser >=1.1.4
     - dqsegdb2
     - gwdatafind >=1.1.0
