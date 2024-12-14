@@ -6,12 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 073b4d8ec14e3db32c7cff74df2248f31d378fb095089e7ceb241cfb34f6e8fd
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - gwpy-plot = gwpy.cli.gwpy_plot:main
@@ -19,12 +19,12 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools >=61
     - setuptools-scm >=3.4.3
     - wheel
   run:
-    - astropy >=4.3.0
+    - astropy-base >=4.3.0
     - dateparser >=1.1.4
     - dqsegdb2
     - gwdatafind >=1.1.0
@@ -34,7 +34,7 @@ requirements:
     - ligotimegps >=1.2.1
     - matplotlib-base >=3.3.0
     - numpy >=1.19
-    - python >=3.8
+    - python >={{ python_min }}
     - python-dateutil
     - requests
     - scipy >=1.5.0
@@ -57,6 +57,7 @@ test:
     - python-ldas-tools-framecpp
     - python-ligo-lw >=1.7.0
     - uproot >=4.1.5
+    - python {{ python_min }}
   commands:
     # check requirements
     - python -m pip check
