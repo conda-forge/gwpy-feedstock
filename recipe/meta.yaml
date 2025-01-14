@@ -1,5 +1,5 @@
 {% set name = "gwpy" %}
-{% set version = "3.0.10" %}
+{% set version = "3.0.11" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 073b4d8ec14e3db32c7cff74df2248f31d378fb095089e7ceb241cfb34f6e8fd
+  sha256: b85557a4ef30ea2e5c25c99b797d27a4185885533a8158b73ba515e06e6cf54a
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - gwpy-plot = gwpy.cli.gwpy_plot:main
@@ -30,7 +30,7 @@ requirements:
     - gwdatafind >=1.1.0
     - gwosc >=0.5.3
     - h5py >=3.0.0
-    - ligo-segments >=1.0.0
+    - igwn-segments >=2.0.0
     - ligotimegps >=1.2.1
     - matplotlib-base >=3.3.0
     - numpy >=1.19
@@ -43,6 +43,7 @@ requirements:
 test:
   requires:
     - pip
+    - python {{ python_min }}
     # for the tests to run:
     - pytest >=3.9.1
     - pytest-freezer
@@ -57,7 +58,6 @@ test:
     - python-ldas-tools-framecpp
     - python-ligo-lw >=1.7.0
     - uproot >=4.1.5
-    - python {{ python_min }}
   commands:
     # check requirements
     - python -m pip check
@@ -70,7 +70,7 @@ test:
 
 about:
   home: https://gwpy.github.io
-  dev_url: https://github.com/gwpy/gwpy.git
+  dev_url: https://gitlab.com/gwpy/gwpy.git
   doc_url: https://gwpy.github.io/docs/{{ version }}/
   license: GPL-3.0-or-later
   license_family: GPL
