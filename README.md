@@ -11,7 +11,7 @@ Summary: A python package for gravitational-wave astrophysics
 
 Development: https://gitlab.com/gwpy/gwpy.git
 
-Documentation: https://gwpy.github.io/docs/3.0.12/
+Documentation: https://gwpy.github.io/docs/3.0.13/
 
 GWpy is a collaboration-driven Python package providing tools for
 studying data from ground-based gravitational-wave detectors.
