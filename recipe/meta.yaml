@@ -1,5 +1,5 @@
 {% set name = "gwpy" %}
-{% set version = "3.0.12" %}
+{% set version = "3.0.13" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 9c99c6cf62142911cb5f64c1219770deaeb5129e7d78cfd7c0537838d0432231
+  sha256: 59a2dc90a9c2edde3efae090303c0f8afeb6c644dae6c8fdd4d92bf0799374b1
 
 build:
   noarch: python
@@ -39,6 +39,8 @@ requirements:
     - requests
     - scipy >=1.5.0
     - tqdm >=4.10.0
+  run_constrained:
+    - python-ligo-lw <2.0.0a0
 
 test:
   requires:
