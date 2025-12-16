@@ -1,0 +1,94 @@
+schema_version: 1
+
+context:
+  name: gwpy
+  version: 3.0.13
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: 59a2dc90a9c2edde3efae090303c0f8afeb6c644dae6c8fdd4d92bf0799374b1
+
+build:
+  number: 0
+  noarch: python
+  python:
+    entry_points:
+      - gwpy-plot = gwpy.cli.gwpy_plot:main
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+    - setuptools >=61
+    - setuptools-scm >=3.4.3
+    - wheel
+  run:
+    - astropy-base >=4.3.0
+    - dateparser >=1.1.4
+    - dqsegdb2
+    - gwdatafind >=1.1.0
+    - gwosc >=0.5.3
+    - h5py >=3.0.0
+    - igwn-segments >=2.0.0
+    - ligotimegps >=1.2.1
+    - matplotlib-base >=3.3.0
+    - numpy >=1.19
+    - python >=${{ python_min }}
+    - python-dateutil
+    - requests
+    - scipy >=1.5.0
+    - tqdm >=4.10.0
+  run_constraints:
+    - python-ligo-lw <2.0.0a0
+
+tests:
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+        - pytest >=3.9.1
+        - pytest-freezer
+        - pytest-requires
+        - requests-mock
+        - beautifulsoup4
+        - inspiral-range >=0.5.0
+        - python-framel >=8.40.1
+        - python-lal
+        - python-lalframe
+        - python-ldas-tools-framecpp
+        - python-ligo-lw >=1.7.0
+        - uproot >=4.1.5
+    script:
+      # Check metadata
+      - python -m pip check
+      - python -m pip show gwpy
+      # Run the test suite
+      - python -m pytest -ra --pyargs gwpy
+      # Test command-line entry points
+      - python -m gwpy.time --help
+      - gwpy-plot --help
+
+about:
+  summary: A python package for gravitational-wave astrophysics
+  description: |
+    GWpy is a collaboration-driven Python package providing tools for
+    studying data from ground-based gravitational-wave detectors.
+
+    GWpy provides a user-friendly, intuitive interface to the common
+    time-domain and frequency-domain data produced by the LIGO and Virgo
+    observatories and their analyses, with easy-to-follow tutorials at each
+    step.
+  homepage: https://gwpy.github.io
+  repository: https://gitlab.com/gwpy/gwpy.git
+  documentation: https://gwpy.github.io/docs/${{ version }}/
+  license: GPL-3.0-or-later
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - duncanmmacleod
