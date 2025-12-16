@@ -18,14 +18,14 @@ build:
   python:
     entry_points:
       - gwpy-plot = gwpy.cli.gwpy_plot:main
-  script: ${{ PYTHON }} -m pip install . -vv
+  script: uv pip install --python ${{ PYTHON }} . --link-mode=copy --no-build-isolation --no-deps -v
 
 requirements:
   host:
-    - pip
     - python ${{ python_min }}.*
     - setuptools >=61
     - setuptools-scm >=3.4.3
+    - uv
     - wheel
   run:
     - astropy-base >=4.3.0
