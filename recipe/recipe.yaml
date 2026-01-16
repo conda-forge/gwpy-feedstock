@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: gwpy
-  version: 3.0.13
+  version: 3.0.14
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: 59a2dc90a9c2edde3efae090303c0f8afeb6c644dae6c8fdd4d92bf0799374b1
+  sha256: bf25d19763c9128f515144349d3f70925a8334bbd22950c01d35bb954f323f52
 
 build:
   number: 0
@@ -37,31 +37,32 @@ requirements:
     - igwn-segments >=2.0.0
     - ligotimegps >=1.2.1
     - matplotlib-base >=3.3.0
-    - numpy >=1.19
+    - numpy >=1.19.5
+    - packaging >=24.1
     - python >=${{ python_min }}
     - python-dateutil
-    - requests
-    - scipy >=1.5.0
-    - tqdm >=4.10.0
+    - requests >=2.20.0
+    - scipy >=1.6.0
+    - tqdm >=4.52.0
   run_constraints:
     - python-ligo-lw <2.0.0a0
 
 tests:
   - requirements:
       run:
+        - beautifulsoup4
+        - inspiral-range >=0.9.3
         - pip
-        - python ${{ python_min }}.*
-        - pytest >=3.9.1
+        - pytest >=7.3.0
         - pytest-freezer
         - pytest-requires
-        - requests-mock
-        - beautifulsoup4
-        - inspiral-range >=0.5.0
+        - python ${{ python_min }}.*
         - python-framel >=8.40.1
         - python-lal
         - python-lalframe
         - python-ldas-tools-framecpp
         - python-ligo-lw >=1.7.0
+        - requests-mock
         - uproot >=4.1.5
     script:
       # Check metadata
