@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: gwpy
-  version: 3.0.14
+  version: "4.0.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: bf25d19763c9128f515144349d3f70925a8334bbd22950c01d35bb954f323f52
+  sha256: 2448143c5cb6b54777b2adf55c2f6500dec42ee6120c32fd64e6e5d0fcf3896e
 
 build:
   number: 0
