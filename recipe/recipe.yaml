@@ -19,6 +19,8 @@ build:
   python:
     entry_points:
       - gwpy-plot = gwpy.cli.gwpy_plot:main
+      - gwpy-rds = gwpy.tools.rds:main
+      - gwpy-tconvert = gwpy.time.__main__:main
   script: uv pip install --python ${{ PYTHON }} . --link-mode=copy --no-build-isolation --no-deps -v
 
 requirements:
@@ -70,8 +72,9 @@ tests:
       # Run the test suite
       - python -m pytest -ra --pyargs gwpy
       # Test command-line entry points
-      - python -m gwpy.time --help
       - gwpy-plot --help
+      - gwpy-rds --help
+      - gwpy-tconvert --help
 
 about:
   summary: A python package for gravitational-wave astrophysics
