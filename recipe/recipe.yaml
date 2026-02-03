@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: gwpy
-  version: "4.0.0"
+  version: "4.0.1"
   python_min: "3.11"
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: 2448143c5cb6b54777b2adf55c2f6500dec42ee6120c32fd64e6e5d0fcf3896e
+  sha256: 477aa69bd40506bfb0df5ec779d9dd6fef562a3bfabe58a52b297e25c57f61f0
 
 build:
   number: 0
@@ -19,6 +19,8 @@ build:
   python:
     entry_points:
       - gwpy-plot = gwpy.cli.gwpy_plot:main
+      - gwpy-rds = gwpy.tools.rds:main
+      - gwpy-tconvert = gwpy.time.__main__:main
   script: uv pip install --python ${{ PYTHON }} . --link-mode=copy --no-build-isolation --no-deps -v
 
 requirements:
@@ -70,8 +72,9 @@ tests:
       # Run the test suite
       - python -m pytest -ra --pyargs gwpy
       # Test command-line entry points
-      - python -m gwpy.time --help
       - gwpy-plot --help
+      - gwpy-rds --help
+      - gwpy-tconvert --help
 
 about:
   summary: A python package for gravitational-wave astrophysics
