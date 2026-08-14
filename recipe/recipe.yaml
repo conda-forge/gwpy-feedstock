@@ -1,16 +1,15 @@
 schema_version: 1
 
 context:
-  name: gwpy
   version: "4.0.2"
   python_min: "3.11"
 
 package:
-  name: ${{ name|lower }}
+  name: gwpy
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  url: https://pypi.org/packages/source/g/gwpy/gwpy-${{ version }}.tar.gz
   sha256: 4bc2babaaf2cb33a68ec472cc224c7d60e65a1d55b1b2f92ef05755a16d919bd
 
 build:
