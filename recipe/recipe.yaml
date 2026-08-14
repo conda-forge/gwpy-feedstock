@@ -57,6 +57,7 @@ tests:
         - pytest >=8.4
         - pytest-freezer >=0.4.9
         - pytest-requires >=0.1.0
+        - pytest-xdist >=3.8.0
         - python ${{ python_min }}.*
         - python-framel >=8.40.1
         - python-lal
@@ -69,7 +70,7 @@ tests:
       - python -m pip check
       - python -m pip show gwpy
       # Run the test suite
-      - python -m pytest -ra --pyargs gwpy
+      - python -m pytest -n ${{ env.get("CPU_COUNT", default="1") }} -ra --pyargs gwpy
       # Test command-line entry points
       - gwpy-plot --help
       - gwpy-rds --help
