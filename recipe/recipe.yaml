@@ -1,8 +1,7 @@
 schema_version: 1
 
 context:
-  version: "4.0.2"
-  python_min: "3.11"
+  version: "4.1.0"
 
 package:
   name: gwpy
@@ -10,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/g/gwpy/gwpy-${{ version }}.tar.gz
-  sha256: 4bc2babaaf2cb33a68ec472cc224c7d60e65a1d55b1b2f92ef05755a16d919bd
+  sha256: f77342063a55515f1c49056aea89e052e3a4e615ee5c504ac1f6c64a68e709de
 
 build:
   number: 0
@@ -50,7 +49,7 @@ requirements:
 tests:
   - requirements:
       run:
-        - arrakis-python >=0.2.0
+        - arrakis-python >=0.14.0
         - beautifulsoup4
         - inspiral-range >=0.9.3
         - pip
