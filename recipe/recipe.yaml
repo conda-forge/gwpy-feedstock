@@ -2,7 +2,6 @@ schema_version: 1
 
 context:
   version: "4.1.0"
-  python_min: "3.11"
 
 package:
   name: gwpy
@@ -50,7 +49,7 @@ requirements:
 tests:
   - requirements:
       run:
-        - arrakis-python >=0.2.0
+        - arrakis-python >=0.14.0
         - beautifulsoup4
         - inspiral-range >=0.9.3
         - pip
